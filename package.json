@@ -1,0 +1,19 @@
+{
+  "name": "forms",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "shadow-cljs": "2.8.92"
+  },
+  "scripts": {
+    "clean": "./clean.sh",
+    "dev": "clojure -Adev",
+    "prod": "clojure -Aprod;"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.5",
+    "@material-ui/icons": "^4.9.1",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1"
+  }
+}

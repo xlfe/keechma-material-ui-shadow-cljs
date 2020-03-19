@@ -1,0 +1,50 @@
+{:paths ["src" "resources" "startup"]
+ :deps {
+        ;; Core
+        org.clojure/clojure               {:mvn/version "1.10.1"}
+        org.clojure/core.async            {:mvn/version "1.0.567"}
+        org.clojure/clojurescript         {:mvn/version "1.10.597"}
+
+        ;; Inspect
+        com.taoensso/timbre               {:mvn/version "4.10.0"}
+
+        ;; Route & serve
+        aleph                             {:mvn/version "0.4.7-alpha4"}
+        ring/ring-core                    {:mvn/version "1.8.0"}
+        ring/ring-codec                   {:mvn/version "1.1.2"}
+        metosin/reitit-core               {:mvn/version "0.4.2"}
+        metosin/reitit-ring               {:mvn/version "0.4.2"}
+
+        ;; Database
+        com.datomic/datomic-free          {:mvn/version "0.9.5697"}
+
+        ;; Client build
+        thheller/shadow-cljs              {:mvn/version "2.8.93"}
+
+        ;; Client 
+        cljsjs/material-ui                {:mvn/version "4.9.1-0"}
+        cljsjs/material-ui-icons          {:mvn/version "4.4.1-0"}
+        reagent                           {:mvn/version "0.9.1"}
+        keechma                           {:mvn/version "0.3.4"}}
+
+ :aliases {
+           :prod
+           {:main-opts ["-m" "prod"]}
+
+           :dev
+           {:main-opts ["-m" "dev"]
+            :extra-deps {
+                                     nrepl/nrepl                {:mvn/version "0.6.0"}
+                                     com.bhauman/figwheel-main  {:mvn/version "0.2.3"}
+                                     cider/cider-nrepl          {:mvn/version "0.24.0"}
+                                     cider/piggieback           {:mvn/version "0.4.1"}
+                                     devcards                   {:mvn/version "0.2.5"}}}
+
+           ;; - to run it:
+           ;;   java -cp target/<your-project>.jar clojure.main -m <your-namespace-with-main>
+           :uberjar
+           {
+                       :main-opts ["-m" "uberdeps.uberjar"]
+                       :extra-deps {uberdeps {:mvn/version "0.1.8"}}}}}
+
+
